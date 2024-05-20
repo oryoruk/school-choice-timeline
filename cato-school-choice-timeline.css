@@ -1,0 +1,989 @@
+/*additional styles for the timeline visualization*/
+
+.timeline_item_container {
+    color: black;
+}
+.timeline_item_text{
+    /* visibility: visible; */
+    /* user-select: none; */
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+    /* cursor: pointer; */
+    /* color: #000; */
+    /* overflow: hidden; */
+    white-space: normal;
+    /* float: left; */
+    margin-top: 10px;
+    text-align: left;
+    /* -webkit-line-clamp: 4; */
+    /* text-overflow: ellipsis; */
+    /* max-width: 200px; */
+    /* -webkit-box-orient: vertical; */
+    /* display: -webkit-box; */
+    display: block;
+    display: -webkit-box;
+    max-width: 200px;
+    height: 80px;
+    /* margin: 0 auto; */
+    font-size: 18px;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.timeline_item_year {
+    text-align: left;
+    font-size:28px;
+    top: 10px;
+    left: 10px;
+    color: #625c57;
+    line-height: 1;
+    font-family: Crimson Pro Variable;
+}
+.timeline_item_title {
+    text-align: left;
+    font-size:30px;
+    /*inline-size: 150px;*/
+    /*!* overflow: hidden; *!*/
+    /*overflow-wrap: break-word;*/
+    word-break: break-word;
+    white-space: pre-wrap;
+    line-height: 1;
+    font-family: Crimson Pro Variable;
+}
+/*.timeline_item_readmore {*/
+/*  text-align: right;*/
+/*  font-size:18px;*/
+/*  bottom: 10px;*/
+/*  right: 10px;*/
+/*  position:absolute;*/
+/*}*/
+/*glightbox styles*/
+/*.glightbox-clean .gnext {*/
+/*  height: 42px;*/
+/*  width: 42px;*/
+/*}*/
+
+/*timeline navigational control buttons*/
+/*<input type="button" id="zoomIn" value="Zoom In" />*/
+/*<input type="button" id="zoomOut" value="Zoom Out" />*/
+/*<input type="button" id="moveLeft" value="Move Left" />*/
+/*<input type="button" id="moveRight" value="Move Right" />*/
+/*<input type="button" id="resetTimeline" value="Reset Timeline" />*/
+/*<input type="button" id="zoomableToggle" value="Scroll Zoom On" />*/
+
+.timeline_navigation {
+    width: 25px;
+    height: 25px;
+    background-color: #C64D2D;
+    border-radius: 50%;
+    border-width: 0px;
+    margin-right:10px;
+}
+
+.timeline_navigation svg {
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    position: absolute;
+    right: 6px;
+    display: block;
+}
+
+#zoomIn {
+    /*old navigation*/
+    /*  position: absolute;
+      top: 0px;
+      right: 70px;*/
+    text-size-adjust: 100%;
+    z-index: 99999;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: absolute;
+    left: 30px;
+    top: 15%;
+    height: 42px  !important;
+    width: 42px !important;
+    border-radius: 50% !important;
+    outline:none;
+}
+
+.active_btn {
+    background-color: rgba(0,0,0,.15);
+}
+.inactive_btn {
+    background-color: rgba(0,0,0,.05);
+}
+#zoomIn:hover {
+    background-color: rgba(0,0,0,.25);
+}
+
+#zoomOut:hover {
+    background-color: rgba(0,0,0,.25);
+}
+
+#moveLeft:hover {
+    background-color: rgba(0,0,0,.25);
+}
+
+#moveRight:hover {
+    background-color: rgba(0,0,0,.25);
+}
+
+#moveLeft {
+    /*old navigation*/
+    /*  position: absolute;
+      top: 0px;
+      right: 140px;*/
+    text-size-adjust: 100%;
+    z-index: 99999;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: absolute;
+    left: 85px;
+    /*background-color: rgba(0,0,0,.15);*/
+    top: 15%;
+    height: 42px  !important;
+    width: 42px !important;
+    border-radius: 50% !important;
+    outline:none;
+}
+
+
+
+#moveRight {
+    /*  position: absolute;
+      top: 0px;
+      right: 105px;*/
+    text-size-adjust: 100%;
+    z-index: 99999;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: absolute;
+    right: 85px;
+    /*background-color: rgba(0,0,0,.15);*/
+    top: 15%;
+    height: 42px  !important;
+    width: 42px !important;
+    border-radius: 50% !important;
+    outline:none;
+}
+#moveLeft svg {
+    position: absolute;
+    right: 7px;
+}
+#zoomOut {
+    /*old navigation*/
+    /*  position: absolute;
+      top: 0px;
+      right: 35px;*/
+    text-size-adjust: 100%;
+    z-index: 99999;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: absolute;
+    right: 30px;
+    /*background-color: rgba(0,0,0,.15);*/
+    top: 15%;
+    height: 42px  !important;
+    width: 42px !important;
+    border-radius: 50% !important;
+    outline:none;
+}
+#resetTimeline {
+    position: absolute;
+    top: 0x;
+    right: 0px;
+}
+#resetTimeline svg {
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    right: 4px;
+    position: absolute;
+}
+.glightbox-open {
+    height: auto;
+}
+
+/*these styles overwrite the library's user-select behavior from none to auto, and making it selectable*/
+.glightbox-container .gslide {
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+}
+
+.glightbox-clean .gclose, .glightbox-clean .gnext, .glightbox-clean .gprev {
+    height: 42px  !important;
+    width: 42px !important;
+    border-radius: 50% !important;
+}
+.gnext svg {
+    margin: 0px 0px 0px 3px !important;
+}
+
+.gprev svg {
+    margin: 0px 3px 0px 0px !important;
+}
+
+.gslide-inline .ginlined-content {
+    padding: 0px !important;
+    position:relative;
+    background:#000000;
+}
+
+/*adjusting transparency*/
+/*@media (min-width: 769px) {*/
+.goverlay {
+    background: rgba(0, 0, 0, .4) !important;
+}
+/*}*/
+
+/*custom slide design*/
+.lb_infocard {
+
+    /*height: 465px;*/
+    background: #F9F7F4;
+    width: 728px;
+    min-height: 400px;
+    /*background-color: #ff0100;*/
+    /*position: relative;*/
+}
+
+.lb_infocard_container{
+    padding: 26px 25px 26px 25px;
+
+}
+
+.lb_infocard_date {
+    /*appended with Variable for Safari*/
+    font-family: Crimson Pro Variable;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 50px;
+    /* or 69% */
+    letter-spacing: 0.01em;
+    color: #7C756D;
+}
+
+.lb_infocard_dateline {
+    height: 0px;
+    border-bottom: 1px solid #C64D2D;
+    margin-top: 15px;
+    margin-bottom:20px;
+    opacity:50%;
+}
+
+.lb_infocard_mediacontainer {
+    width: 237px;
+    /* height: 240px; */
+    flex-direction: column;
+    display: flex;
+    float: left;
+    margin-right: 20px;
+    /* background-color: #ff0100; */
+    margin-bottom: 20px;
+}
+
+.lb_infocard_media {
+    /*height: 180px;*/
+    min-height: 150px;
+    max-height: 350px;
+    width: 100%;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center top;
+    background-size:cover;
+    /*background-size: 49px;*/
+
+}
+
+.lb_infocard_mediadesc {
+    /*#server comment out:*/
+    /*appended with Variable for Safari*/
+    font-family: "Inter Variable",sans-serif;
+    /*font-family: Inter Variable;*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 140%;
+    /* or 17px */
+    letter-spacing: 0.02em;
+    /* Dark Pewter */
+    color: #5E574F;
+    text-align: right;
+}
+
+.lb_infocard_textcontainer {
+    overflow: hidden;
+    /*margin-bottom: 20px;*/
+}
+
+.lb_infocard_title {
+    /*appended with Variable for Safari*/
+    font-family: Crimson Pro Variable;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 110%;
+    /* identical to box height, or 40px */
+    letter-spacing: 0.01em;
+    color: #1A1714;
+}
+
+.lb_infocard_text {
+    /*#server comment out:*/
+    /*appended with Variable for Safari*/
+    font-family: "Inter Variable",sans-serif;
+    /*font-family: Inter Variable;*/
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 170%;
+    /* or 24px */
+    margin-top: 10px;
+    margin-bottom: 30px;
+    letter-spacing: 0.01em;
+    color: #1A1714;
+}
+
+
+.lb_infocard_readmore {
+    /*margin-top:10px;*/
+    /*font-family: Inter;*/
+    /*font-size: 14px;*/
+    /*letter-spacing: 0.01em;*/
+    /*font-weight: bold;*/
+    /*margin-top: 20px;*/
+    /*float:right;*/
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    /*text-align: right;*/
+    /*line-height: 100%;*/
+    /*letter-spacing: 0.02em;*/
+    /*vertical-align: top;*/
+    /*color: #C64D2D;*/
+}
+
+@media only screen and (max-width: 1200px) {
+    /*.timeline_viz_menu  {*/
+    /*  right: 2% !important;*/
+    /*}*/
+
+    .lb_infocard {
+        width: 375px;
+    }
+    .lb_infocard_container{
+        padding: 30px 20px 20px 20px;
+    }
+    .lb_infocard_date {
+        /*mobile only*/
+        font-style: light;
+        /*mobile only*/
+        font-size: 38px;
+        /*mobile only*/
+        line-height: 38px;
+    }
+    .lb_infocard_dateline {
+        /*mobile only*/
+        margin-top: 5px;
+    }
+    .lb_infocard_mediacontainer {
+        /*mobile only*/
+        width: 100%;
+        /*mobile only*/
+        /*mobile only*/
+        float: none;
+        /*mobile only*/
+        margin-right: 0px;
+    }
+    .lb_infocard_media{
+        min-height: 200px;
+        max-height: 335px;
+    }
+    .lb_infocard_textcontainer {
+        /*mobile only*/
+        margin-top: 20px;
+    }
+    .lb_infocard_title {
+        /*mobile only*/
+        font-style: light;
+        /*mobile only*/
+        font-size: 28px;
+    }
+
+    .lb_infocard_text {
+        /*mobile only*/
+        line-height: 24px;
+        /*margin-bottom:45px;*/
+
+    }
+    .lb_infocard_readmore {
+        /*margin-top:10px;*/
+        /*font-family: Inter;*/
+        /*font-size: 14px;*/
+        /*letter-spacing: 0.01em;*/
+        /*font-weight: bold;*/
+        /*margin-top: 20px;*/
+        float:right;
+        position: unset;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+
+/*@media only screen and (min-width: 600px) {*/
+/*  .lb_infocard {*/
+/*    width: 728px;*/
+/*  }*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+/*!*to make the autoscrolling smoother*!*/
+/*html {*/
+/*  scroll-behavior: smooth;*/
+/*}*/
+#timeline_viz {
+    position:relative;
+    /*to expand the background eras upwards: */
+    /*padding-top: 16px;*/
+}
+
+.timeline_viz_menu  {
+    /*old navigation*/
+    /*  position: absolute;
+      !*top: -35px;*!
+      !*right: 12%;*!
+      !*top: -5%;*!
+      right: 45%;
+      z-index: 990;*/
+
+    text-size-adjust: 100%;
+    /*position: relative;*/
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow: hidden;
+}
+.timeline_viz_menu button {
+    /*width: 120px;*/
+    /*margin: 10px;*/
+    /*display: block;*/
+    cursor:pointer;
+}
+
+/*playing around with zoom*/
+body {
+    /*transform: scale(1.5);*/
+}
+/*changing axis tick labels for dates*/
+.vis-panel.vis-bottom{
+    /*#server comment out:*/
+    font-family: sans-serif;
+    /*server comment in*/
+    font-size: 0.8rem !important;
+}
+
+/* drawing all the time-point circles red and dark red */
+.vis-item.circle {
+    background-color: transparent;
+    border-color: #7c756D;
+}
+
+/* removing the vertical grid lines */
+.vis-time-axis.vis-background .vis-grid.vis-vertical {
+    border-left: 0px solid;
+}
+
+/* creating tick marks deleted by removing grid lines */
+.vis-time-axis .vis-text {
+    border-left: 1px solid;
+    border-color: #e5e5e5;
+}
+
+/* removing the border of the entire visualization */
+.vis-timeline {
+    border: 0px solid #bfbfbf !important;
+    /*to expand the background eras upwards: */
+    overflow:visible !important;
+}
+.vis-panel.vis-center{
+    /*to expand the background eras upwards: */
+    overflow: visible !important;
+    border-top-color:#FFFFFF !important;
+    border-left-color:#FFFFFF !important;
+    border-right-color:#FFFFFF !important;
+}
+
+.vis-panel.vis-background.vis-vertical {
+    /*to expand the background eras upwards: */
+    overflow:visible !important;
+}
+/* thinning the current time line from 2px to 1px */
+.vis-panel.vis-background.vis-vertical .vis-current-time {
+    /*width:1px;*/
+    /*to expand the background eras upwards: */
+    top:auto !important;
+    bottom:0 !important;
+    /*height: 102% !important;*/
+    /*margin-top: 100px;*/
+    /*left-border:*/
+    z-index:0;
+}
+/*html,*/
+/*body {*/
+/*  width: 100%;*/
+/*}*/
+
+/* these styles play around with labels for selected items */
+.vis-item-content {
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 5px;
+    /*margin: -25px -50px;*/
+    text-align: center;
+    /* font-size:0px; */
+}
+
+/* drawing the circles for time-points */
+.vis-item.vis-box.circle {
+    /*   border-radius: 0;
+    border-width: 2px;
+    font-size: 24pt;
+    font-weight: bold; */
+    border-width: 1px;
+    /*margin: 0px 0px 0px 0px;*/
+    /*padding: 0px 0px 0px 0px;*/
+    background-size: cover;
+    /*background-size: 50px;*/
+    /*circle diameter variations:*/
+    /*height: 34px; width: 34px;*/
+    height: auto;
+    min-height: 160px;
+    width: 240px;
+    cursor: pointer;
+    /*circle diameter variations:*/
+    background-position: center;
+    /*border-color: #a79d9d;*/
+    /*background-repeat: no-repeat;*/
+    background-color:#e1dfdd;
+    filter: drop-shadow(0px 1px 4px #a5a5a5);
+
+    border-radius: 4px;
+    /* display: inline-block; */
+    /*background-image: url('https://www.cato.org/sites/cato.org/files/timeline/images/ag_charles_bonaparte.jpg');*/
+    box-sizing: content-box;
+}
+.vis-item.vis-box.circle:hover {
+    background-color: #F9F7F4;
+}
+
+/* drawing the selected circles for time-points */
+.vis-item.vis-box.vis-selected.circle {
+    /*background-size: 70px;*/
+    /*circle diameter variations:*/
+    /*height: 70px;  width: 70px;*/
+    /*height: auto;*/
+    /*height: 160px;*/
+    height: auto;
+    min-height: 160px;
+    width: 240px;
+    /*circle diameter variations:*/
+
+    /*background-color: #bbb;*/
+    /*border-radius: 50%;*/
+    /*border-width: 1px;*/
+    background-color: #F9F7F4;
+
+    margin: 0px 0px 0px 0px;
+    /*!*padding: 0px 0px 0px 0px;*!*/
+    /*color: black;*/
+    /*font-size:14px;*/
+    /*text-align: right;*/
+    /*!*background-image: url('https://www.cato.org/sites/cato.org/files/timeline/images/ag_charles_bonaparte.jpg');*!*/
+
+    /*color: #FFC97E;*/
+    border-color: #FFC97E;
+    filter: drop-shadow(0px 1px 4px #a5a5a5);
+}
+
+.vis-rolling-mode-btn {
+    /*circle diameter variations:*/
+    /*height: 36px !important;*/
+    /*width: 36px !important;  */
+    height: 30px !important;
+    width: 30px !important;
+    /*circle diameter variations:*/
+
+    opacity: 1 !important;
+    background: #d6d7d8 !important;
+    font-size: 23px !important;
+}
+
+/*ROUND IMAGE VERSION*/
+/*_______________________________________________________________*/
+/* drawing the sticks of the lollipops for time-ranges */
+.vis-item.vis-range.lollipop {
+    /*background: #333333;*/
+    /*width: 100%;*/
+    /*circle diameter variations:*/
+    /*height: 36px;*/
+    height: 30px;
+    /*circle diameter variations:*/
+    /*height: 50px;*/
+    /*circle diameter variations:*/
+    /*padding: 0px 36px 0px 0px;*/
+    padding: 0px 30px 0px 0px;
+    /*margin: 0px -36px 0px 0px;*/
+    margin: 0px -30px 0px 0px;
+    /*circle diameter variations:*/
+
+    /*to center circles at the date*/
+    /*margin: 0px -36px 0px -18px;*/
+    background-repeat: repeat-y;
+    /*background-attachment: fixed;*/
+    background-position: left center;
+    /*circle diameter variations:*/
+    /*background-size: 36px;*/
+    background-size: 30px;
+    /*circle diameter variations:*/
+
+    /*background-size: 49px;*/
+    background-color:transparent;
+    /*background-color: #c30b0b;*/
+    /*circle diameter variations:*/
+    /*border-radius: 36px;*/
+    border-radius: 15px;
+    /*circle diameter variations:*/
+
+    /*border-radius: 50px;*/
+    /*display: inline-block;*/
+    border-color: #a79d9d;
+    /*clip-path: circle(18px at 18px 18px);*/
+    display: flex;
+    z-index: 2;
+    border-width:0px;
+    /* justify-content: space-between; */
+}
+/*framing with a pseudo class*/
+/*https://stackoverflow.com/questions/8286550/transparent-hollow-or-cut-out-circle*/
+.vis-item.vis-range.lollipop .vis-item-overflow {
+    /*width: 100%;*/
+    position:relative;
+    /*circle diameter variations:*/
+    /*width:36px; height:36px;*/
+    width:30px; height:30px;
+    /*circle diameter variations:*/
+
+    /*width:50px; height:50px;*/
+    /*circle diameter variations:*/
+    /*border-radius:36px;*/
+    border-radius:15px;
+    /*padding: 0px 36px 0px 0px;*/
+    padding: 0px 30px 0px 0px;
+    /*margin: 0px -36px 0px 0px;*/
+    margin: 0px -30px 0px 0px;
+    /*circle diameter variations:*/
+
+    /*align: left;*/
+    /*overflow:hidden;*/
+    z-index: 3;
+    box-sizing: content-box;
+}
+/*framing with a pseudo class*/
+.vis-item.vis-range.lollipop .vis-item-overflow:before {
+    content:'';
+    position:absolute;
+    left:-0px; top:-0px;
+    border-radius:100%;
+    /*circle diameter variations:*/
+    /*width:34px; height:34px;*/
+    width:28px; height:28px;
+    /*circle diameter variations:*/
+    border:1px solid #7B8AE1;
+    box-sizing: content-box;
+    z-index: 3;
+}
+
+/*lollipop sticks*/
+.vis-item.vis-range.lollipop .vis-item-visible-frame{
+    position: absolute;
+    /*circle diameter variations:*/
+    /*left: 36px;*/
+    left: 30px;
+    /*circle diameter variations:*/
+
+    /*left: 50px;*/
+
+    /*to center circles at the date*/
+    /*circle diameter variations:*/
+    /*width:  calc(100% - 36px);*/
+    width:  calc(100% - 30px);
+    /*circle diameter variations:*/
+
+    /*did not work in firefox:*/
+    /*width:  -webkit-calc(100% - 36px);*/
+    /*width:  -webkit-calc(100% - 50px);*/
+    /*height: 1px;*/
+    /*margin: 24px 0px 25px 0px;*/
+    /*border-radius: 0px 3px 3px 0px;*/
+    /*local*/
+    height: 2px;
+    /*circle diameter variations:*/
+    /*margin: 16px 0px 16px -1px;*/
+    margin: 13px 0px 13px -1px;
+    /*circle diameter variations:*/
+
+    /*margin: 22px 0px 22px 0px;*/
+    border-radius: 0px 2px 2px 0px;
+    border-color: #98a4e7 #98a4e7 #98a4e7 #bfc7f8;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    background-color: #bfc7f8;
+    z-index: 2;
+    transform: translateX(0px) !important;
+    box-sizing: content-box;
+}
+/*ROUND IMAGE VERSION END*/
+
+/* drawing the selected lollipops for time-ranges */
+.vis-item.vis-range.vis-selected.lollipop {
+    color: #FFC97E;
+    border-color: #FFC97E;
+    filter: drop-shadow(2px 2px 2px #a5a5a5);
+    /*circle diameter variations:*/
+    /*height: 72px;*/
+    height: 60px;
+    /*padding: 0px 72px 0px 0px;*/
+    padding: 0px 60px 0px 0px;
+    /*margin: 0px -72px 0px 0px;*/
+    margin: 0px -60px 0px 0px;
+    /*border-radius: 72px;*/
+    border-radius: 30px;
+    /*circle diameter variations:*/
+
+    /*to center circles at the date*/
+    /*margin: 0px -36px 0px -18px;*/
+    /*background-attachment: fixed;*/
+    /*circle diameter variations:*/
+    /*background-size: 72px;*/
+    background-size: 60px;
+    /*circle diameter variations:*/
+
+
+}
+
+.vis-item.vis-range.vis-selected.lollipop .vis-item-overflow {
+    /*circle diameter variations:*/
+    /*width:72px; height:72px;*/
+    width:60px; height:60px;
+    /*padding: 0px 72px 0px 0px;*/
+    padding: 0px 60px 0px 0px;
+    /*margin: 0px -72px 0px 0px;*/
+    margin: 0px -60px 0px 0px;
+    /*border-radius:72px;*/
+    border-radius:30px;
+    /*circle diameter variations:*/
+
+}
+
+/*framing with a pseudo class*/
+.vis-item.vis-range.vis-selected.lollipop .vis-item-overflow:before {
+    /*circle diameter variations:*/
+    /*width:70px; height:70px;*/
+    width:58px; height:58px;
+    /*circle diameter variations:*/
+    border-color: #FFC97E;
+}
+/*lollipop sticks*/
+.vis-item.vis-range.vis-selected.lollipop .vis-item-visible-frame{
+    border-color: #ffc97e #FFC97E #FFC97E #ffdba8;
+    background-color: #ffdba8;
+    /*circle diameter variations:*/
+    /*left: 72px;*/
+    left: 60px;
+    /*to center circles at the date*/
+    /*width:  calc(100% - 72px);*/
+    width:  calc(100% - 60px);
+    /*circle diameter variations:*/
+
+    /*did not work in firefox:*/
+    /*width:  -webkit-calc(100% - 72px);*/
+    /*width:  -webkit-calc(100% - 50px);*/
+    /*height: 1px;*/
+    /*margin: 24px 0px 25px 0px;*/
+    /*border-radius: 0px 3px 3px 0px;*/
+    /*local*/
+    height: 4px;
+    /*circle diameter variations:*/
+    /*margin: 33px 0px 33px -1px;*/
+    margin: 27px 0px 27px -1px;
+    /*circle diameter variations:*/
+
+    border-radius: 0px 3px 3px 0px;
+    border-width: 1px 1px 1px 0px;
+}
+
+
+/*background shading*/
+.vis-item.vis-background.abb_background_pink {
+    background-color: #fff7f7;
+    z-index : 0;
+    /*to expand the background eras upwards: */
+    height: 102% !important;
+}
+.vis-item.vis-background.abb_background_gray {
+    background-color: rgba(161, 151, 139, .1);
+    /*background-color: #fffcf9;*/
+    z-index : 0;
+    /*to expand the background eras upwards: */
+    height: 102% !important;
+}
+
+/*background container overflow*/
+.vis-item.vis-background.abb_background_pink .vis-item-overflow{
+    overflow: visible;
+}
+
+/*background container overflow*/
+.vis-item.vis-background.abb_background_gray .vis-item-overflow{
+    overflow: visible;
+}
+
+
+/*background font etc.*/
+.vis-item.vis-background.abb_background_pink .vis-item-overflow .vis-item-content{
+    position: absolute;
+    /*left: 10px;*/
+    /*top: 10px;*/
+    text-align: left;
+    /*comment out on the server*/
+    font-family: sans-serif;
+    transform: translateX(0px) !important;
+    color: #cc9da2;
+    font-size: 0.72rem !important;
+    font-style: italic;
+}
+
+/*background font etc.*/
+.vis-item.vis-background.abb_background_gray .vis-item-overflow .vis-item-content{
+    position: absolute;
+    /*left: 10px;*/
+    /*top: 10px;*/
+    text-align: left;
+    /*comment out on the server*/
+    font-family: sans-serif;
+    transform: translateX(0px) !important;
+    color: #7C756D;
+    font-size: 0.72rem !important;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+/* this is added to remove the tiny buggy left-most tick hanging in the corner */
+.vis-text.vis-major{
+    border-left:0px;
+}
+
+
+/*this one makes the axis knots smaller, changing the bg color */
+.vis-item.vis-dot.circle {
+    border-width: 2px;
+    border-radius: 4px;
+    padding: 2px;
+    height: 0px;
+    width: 0px;
+    margin: -1px 2px 2px 0px;
+    background-color: #a6a19c;
+    border-color: #bfbab4;
+}
+.vis-item.vis-dot.circle.vis-selected {
+    border-color: #FFC97E;
+    background-color: #ecba5a;
+}
+
+/*changing the color of vertical lines tying dots to the axis*/
+.vis-item.vis-line {
+    border-color: #bfbfbf;
+
+}
+
+/*changing the color of vertical lines tying dots to the axis*/
+.vis-item.vis-line.vis-selected {
+    border-color: #FFC97E;
+}
+
+
+div.vis-tooltip {
+    border-radius: 0px !important;
+    /*font-family: sans-serif !important;*/
+    border-width: 0px !important;;
+    /*border-color: #3043B4;*/
+    font-family: Inter !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px !important;;
+    line-height: 170%;
+    z-index: 999 !important;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.01em;
+    color: #FFFFFF !important;;
+    background: #a1978b !important;;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25) !important;
+}
+
+.vis-timeline.vis-active {
+    box-shadow: 0 0 10px #ccd4d8;
+}
+.glightbox-container .ginner-container {
+    height: auto !important;
+}
